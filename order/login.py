@@ -8,6 +8,8 @@ import datetime
 
 def loginPage(request):
     next = request.GET.get('next','/main')
+    if request.user is not None and request.user.is_active:
+        return HttpResponseRedirect(next)
     return render(request, 'sign.html', {'next': next})
 
 @login_required
