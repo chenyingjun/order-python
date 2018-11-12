@@ -149,6 +149,7 @@ var table = function(requestUrl, formId, tableId, oper, useCache) {
         dataType: "json",
         data: param,
         cache: false,
+        headers:{ "X-CSRFtoken":$.cookie("csrftoken")},
         complete: function() {
 
             $("#" + tableId).removeAttr("data-hand");
@@ -174,7 +175,7 @@ var table = function(requestUrl, formId, tableId, oper, useCache) {
 
                         var page = resp.data;
 
-                        var data = page.list;
+                        var data = page.fields;
 
                         if (data) {
                             var size = $(data).size();

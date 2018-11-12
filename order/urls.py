@@ -17,10 +17,18 @@ from django.contrib import admin
 from django.urls import path
 from order import login
 
+from systemModel import systemUser
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/login/', login.loginPage),
     path('accounts/logout/', login.logout_view),
     path('submitLogin', login.submitLogin),
     path('main', login.main),
+
+
+
+
+    path('systemuser/', systemUser.user_veiw),
+    path('systemuser/page', systemUser.user_page),
 ]

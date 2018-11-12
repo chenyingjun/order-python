@@ -127,7 +127,7 @@
                             <div class="form-group">
                                 <div class="col-sm-2">
                                     <button class="btn btn-success" type="submit">查询</button>
-                                    <a class="btn btn-primary" href="${request.contextPath}/systemuser/add">新增</a>
+                                    <a class="btn btn-primary" href="/systemuser/add">新增</a>
                                 </div>
                             </div>
                         </form>
@@ -139,7 +139,7 @@
                             <table class="table table-striped" id="systemuserTable">
                                 <thead>
                                 <tr>
-                                    <th td-name="name">姓名</th>
+                                    <th td-name="username">姓名</th>
                                     <th td-name="nickName">昵称</th>
                                     <th td-name="rolesName">角色</th>
                                     <th td-name="email">邮箱</th>
@@ -170,7 +170,7 @@
     */
     $(function () {
 
-        table(path + "/systemuser/page", "serachForm",
+        table("/systemuser/page", "serachForm",
                 "systemuserTable", oper, true);
 
         jQuery("#serachForm").validate(
