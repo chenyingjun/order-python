@@ -72,54 +72,30 @@
                                     </select><label class="error" for="pageSize"></label>
                                 </div>
                                 <div class="col-sm-2">
-                                    <input type="text" id="roleIds" name="roleIds"
-                                           class="js-data-example-ajax mg-bm10" maxlength="32"
-                                           placeholder="用户角色"/><label class="error"
-                                                                      for="roleIds"></label>
-                                </div>
-                                <div class="col-sm-1">
                                     <input type="text" id="name" name="name"
                                            class="form-control mg-bm10" maxlength="32"
                                            placeholder="用户名"/><label class="error"
                                                                      for="name"></label>
                                 </div>
-                                <div class="col-sm-1">
-                                    <input type="text" id="nickName" name="nickName"
-                                           class="form-control mg-bm10" maxlength="32"
-                                           placeholder="昵称"/><label class="error"
-                                                                    for="nickName"></label>
-                                </div>
-                                <div class="col-sm-1">
-                                    <input type="text" id="phone" name="phone"
-                                           class="form-control mg-bm10" maxlength="32"
-                                           placeholder="用户手机号"/><label class="error"
-                                                                       for="phone"></label>
-                                </div>
-                                <div class="col-sm-1">
-                                    <select id="sex" class="select2"
-                                            data-placeholder="性别" name="sex">
-                                        <option value="">性别</option>
-                                        <option value="1">男</option>
-                                        <option value="2">女</option>
-                                    </select> <label class="error" for="sex"></label>
-                                </div>
-                                <div class="col-sm-1">
+                                <div class="col-sm-2">
                                     <select id="userStatus" class="select2"
-                                            data-placeholder="状态" name="userStatus">
-                                        <option value="">状态</option>
-                                        <option value="0">禁用</option>
-                                        <option value="1">可用</option>
+                                            data-placeholder="是否活跃" name="userStatus">
+                                        <option value="">是否活跃</option>
+                                        <option value="0">否</option>
+                                        <option value="1">是</option>
                                     </select> <label class="error" for="userStatus"></label>
                                 </div>
-                                <div class="col-sm-1">
+                                <div class="col-sm-2">
                                     <input type="text" id="startTime" name="startTime"
                                            class="form-control mb10"
+                                           AUTOCOMPLETE="off"
                                            onfocus="WdatePicker({maxDate:'#F{$dp.$D(endTime)}',dateFmt:'yyyyMMdd'})"
                                            placeholder="开始时间"/><label class="error" for="startTime"></label>
                                 </div>
-                                <div class="col-sm-1">
+                                <div class="col-sm-2">
                                     <input type="text" id="endTime" name="endTime"
                                            class="form-control mb10"
+                                           AUTOCOMPLETE="off"
                                            onfocus="WdatePicker({minDate:'#F{$dp.$D(startTime)}',dateFmt:'yyyyMMdd'})"
                                            placeholder="结束时间"/><label class="error" for="endTime"></label>
                                 </div>
@@ -139,16 +115,12 @@
                             <table class="table table-striped" id="systemuserTable">
                                 <thead>
                                 <tr>
-                                    <th td-name="username">姓名</th>
-                                    <th td-name="nickName">昵称</th>
-                                    <th td-name="rolesName">角色</th>
+                                    <th td-name="username">用户名</th>
                                     <th td-name="email">邮箱</th>
-                                    <th td-name="phone">手机号</th>
-                                    <th td-name="sex">性别</th>
                                     <th td-name="failNum">失败登录次数</th>
-                                    <th td-name="status">状态</th>
-                                    <th td-name="createTime">创建时间</th>
-                                    <th td-name="updateTime">修改时间</th>
+                                    <th td-name="isActive">是否活活跃</th>
+                                    <th td-name="dateJoined">创建时间</th>
+                                    <th td-name="lastLogin">最后登录时间</th>
                                     <th>操作</th>
                                 </tr>
                                 </thead>

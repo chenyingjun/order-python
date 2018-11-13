@@ -175,7 +175,7 @@ var table = function(requestUrl, formId, tableId, oper, useCache) {
 
                         var page = resp.data;
 
-                        var data = page.fields;
+                        var data = page.list;
 
                         if (data) {
                             var size = $(data).size();
@@ -204,7 +204,7 @@ var table = function(requestUrl, formId, tableId, oper, useCache) {
 
                         if (page) {
                             // 获取总页数
-                            var totalPageNo = page.pages;
+                            var totalPageNo = page.numPages;
 
                             // 当前页数
                             var pageNo = page.pageNum;
