@@ -72,14 +72,14 @@
                                     </select><label class="error" for="pageSize"></label>
                                 </div>
                                 <div class="col-sm-2">
-                                    <input type="text" id="name" name="name"
+                                    <input type="text" id="name" name="username"
                                            class="form-control mg-bm10" maxlength="32"
                                            placeholder="用户名"/><label class="error"
                                                                      for="name"></label>
                                 </div>
                                 <div class="col-sm-2">
                                     <select id="userStatus" class="select2"
-                                            data-placeholder="是否活跃" name="userStatus">
+                                            data-placeholder="是否活跃" name="isActive">
                                         <option value="">是否活跃</option>
                                         <option value="0">否</option>
                                         <option value="1">是</option>
@@ -99,13 +99,14 @@
                                            onfocus="WdatePicker({minDate:'#F{$dp.$D(startTime)}',dateFmt:'yyyyMMdd'})"
                                            placeholder="结束时间"/><label class="error" for="endTime"></label>
                                 </div>
-                            </div>
-                            <div class="form-group">
                                 <div class="col-sm-2">
                                     <button class="btn btn-success" type="submit">查询</button>
                                     <a class="btn btn-primary" href="/systemuser/add">新增</a>
                                 </div>
                             </div>
+{#                            <div class="form-group">#}
+{##}
+{#                            </div>#}
                         </form>
                     </div>
                     <!-- panel-heading -->

@@ -10,7 +10,22 @@ def user_veiw(request):
 def user_page(request):
     page = request.POST.get('pageNum')
     pageSize = request.POST.get('pageSize')
-    userList = User.objects.get_queryset().order_by('id')
+    usernameParam = request.POST.get('username')
+    isActiveParam = request.POST.get('isActive')
+    startTimeParam = request.POST.get('startTime')
+    endTimeParam = request.POST.get('endTime')
+    userList = User.objects.get_queryset()
+    if usernameParam is not None:
+        userList = userList.get(username__contains=usernameParam)
+    if isActiveParam is not None:
+        userList = userList.get(is_active__contains=isActiveParam)
+    if startTimeParam is not None:
+        startTime = datetime.strptime(startTimeParam + ' 00:00:00', '%Y%m%d %H:%M:%S')
+        userList = userList.filter(last_login__gte=startTime)
+    if endTimeParam is not None:
+        endTime = datetime.strptime(endTimeParam + ' 23:59:59', '%Y%m%d %H:%M:%S')
+        userList = userList.filter(last_login__lte=endTime)
+    userList = userList.order_by('-id')
     paginator = Paginator(userList, pageSize)
     try:
         userPage = paginator.page(page)
