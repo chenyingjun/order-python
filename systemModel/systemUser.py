@@ -16,9 +16,9 @@ def user_page(request):
     endTimeParam = request.POST.get('endTime')
     userList = User.objects.get_queryset()
     if usernameParam is not None:
-        userList = userList.get(username__contains=usernameParam)
+        userList = userList.filter(username__contains=usernameParam)
     if isActiveParam is not None:
-        userList = userList.get(is_active__contains=isActiveParam)
+        userList = userList.filter(is_active=isActiveParam)
     if startTimeParam is not None:
         startTime = datetime.strptime(startTimeParam + ' 00:00:00', '%Y%m%d %H:%M:%S')
         userList = userList.filter(last_login__gte=startTime)
